@@ -59,8 +59,12 @@ const OrderHistoryScreen = ({navigation}: any) => {
         contentContainerStyle={styles.ScrollViewFlex}>
         <View
           style={[styles.ScrollViewInnerView, {marginBottom: tabBarHeight}]}>
-          <View style={styles.ItemContainer}>
-            <HeaderBar title="Lịch sử đơn hàng" />
+          <View style={styles.ScreenContainer}>
+            <HeaderBar 
+              title="Lịch sử đơn hàng" 
+              style={{ color: 'black' }} 
+            />
+            
 
             {OrderHistoryList.length == 0 ? (
               <EmptyListAnimation title={'Không tồn tại'} />

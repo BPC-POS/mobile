@@ -1,23 +1,16 @@
-// Import necessary modules
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
 import { COLORS } from '../theme/theme';
 import { BlurView } from '@react-native-community/blur';
 import HomeScreen from '../screens/HomeScreen';
 import FavoritesScreen from '../screens/FavoritesScreen';
 import CartScreen from '../screens/CartScreen';
 import OrderHistoryScreen from '../screens/OrderHistoryScreen';
-import LoginScreen from '../screens/LoginScreen'; // Import the login screen
 import CustomIcon from '../components/CustomIcon';
 
-// Create navigators
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
 
-// Define the TabNavigator
 const TabNavigator = () => {
   return (
     <Tab.Navigator
@@ -90,27 +83,6 @@ const TabNavigator = () => {
   );
 };
 
-// Define the main AppNavigator
-const AppNavigator = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Main"
-          component={TabNavigator}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
-
-// Styles
 const styles = StyleSheet.create({
   tabBarStyle: {
     height: 80,
@@ -129,4 +101,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AppNavigator;
+export default TabNavigator;

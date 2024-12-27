@@ -25,7 +25,7 @@ const RegisterScreen = ({ navigation }: any) => {
       
       <Text style={styles.label}>Username</Text>
       <TextInput
-        style={styles.input}
+        style={[styles.input, { color: COLORS.primaryWhiteHex }]}
         placeholder="Enter your username"
         placeholderTextColor={COLORS.primaryLightGreyHex}
         value={username}
@@ -36,7 +36,7 @@ const RegisterScreen = ({ navigation }: any) => {
       <TextInput
         style={styles.input}
         placeholder="Enter your email"
-        placeholderTextColor={COLORS.primaryLightGreyHex}
+        placeholderTextColor={COLORS.primaryWhiteHex}
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
@@ -47,7 +47,7 @@ const RegisterScreen = ({ navigation }: any) => {
       <TextInput
         style={styles.input}
         placeholder="Enter your password"
-        placeholderTextColor={COLORS.primaryLightGreyHex}
+        placeholderTextColor={COLORS.primaryWhiteHex}
         value={password}
         onChangeText={setPassword}
         secureTextEntry
@@ -55,6 +55,13 @@ const RegisterScreen = ({ navigation }: any) => {
 
       <TouchableOpacity style={styles.registerButton} onPress={handleRegister}>
         <Text style={styles.buttonText}>Register</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        style={styles.homeButton}
+        onPress={() => navigation.navigate('Tab')}
+      >
+        <Text style={styles.buttonText}>Go to Home</Text>
       </TouchableOpacity>
     </View>
   );
@@ -65,25 +72,25 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: SPACING.space_30,
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryWhiteHex,
   },
   title: {
     fontSize: FONTSIZE.size_30,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     textAlign: 'center',
     marginBottom: SPACING.space_30,
   },
   label: {
     fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     marginBottom: SPACING.space_10,
   },
   input: {
-    backgroundColor: COLORS.primaryDarkGreyHex,
+    backgroundColor: COLORS.primaryLightGreyHex,
     borderRadius: SPACING.space_15,
     padding: SPACING.space_16,
     marginBottom: SPACING.space_20,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   registerButton: {
     backgroundColor: COLORS.primaryOrangeHex,
@@ -92,10 +99,16 @@ const styles = StyleSheet.create({
     marginTop: SPACING.space_10,
   },
   buttonText: {
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     textAlign: 'center',
     fontSize: FONTSIZE.size_16,
     fontWeight: '600',
+  },
+  homeButton: {
+    backgroundColor: COLORS.primaryOrangeHex,
+    padding: SPACING.space_16,
+    borderRadius: SPACING.space_15,
+    marginTop: SPACING.space_10,
   },
 });
 

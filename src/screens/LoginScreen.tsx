@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -9,9 +9,8 @@ import {
   Alert
 } from 'react-native';
 import { COLORS, SPACING, FONTSIZE } from '../theme/theme';
-import { useState } from 'react';
 
-const LoginScreen = ({navigation}: any) => {
+const LoginScreen = ({ navigation }: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -31,12 +30,12 @@ const LoginScreen = ({navigation}: any) => {
       <StatusBar backgroundColor={COLORS.primaryBlackHex} />
       
       <View style={styles.formContainer}>
-        <Text style={styles.title}>Welcome Back</Text>
+        <Text style={styles.title}>Hệ thống quản lý Cà Phê</Text>
         
         <TextInput
           style={styles.input}
           placeholder="Email"
-          placeholderTextColor={COLORS.primaryLightGreyHex}
+          placeholderTextColor={COLORS.primaryWhiteHex}
           value={email}
           onChangeText={setEmail}
           keyboardType="email-address"
@@ -46,7 +45,7 @@ const LoginScreen = ({navigation}: any) => {
         <TextInput
           style={styles.input}
           placeholder="Password"
-          placeholderTextColor={COLORS.primaryLightGreyHex}
+          placeholderTextColor={COLORS.primaryWhiteHex}
           value={password}
           onChangeText={setPassword}
           secureTextEntry
@@ -66,6 +65,13 @@ const LoginScreen = ({navigation}: any) => {
             Don't have an account? Register here
           </Text>
         </TouchableOpacity>
+
+        <TouchableOpacity 
+          style={styles.homeButton}
+          onPress={() => navigation.navigate('Tab')}
+        >
+          <Text style={styles.buttonText}>Go to Home</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -74,7 +80,7 @@ const LoginScreen = ({navigation}: any) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryWhiteHex,
   },
   formContainer: {
     flex: 1,
@@ -83,16 +89,16 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: FONTSIZE.size_30,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     textAlign: 'center',
     marginBottom: SPACING.space_30,
   },
   input: {
-    backgroundColor: COLORS.primaryDarkGreyHex,
+    backgroundColor: COLORS.primaryLightGreyHex,
     borderRadius: SPACING.space_15,
     padding: SPACING.space_16,
     marginBottom: SPACING.space_20,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   loginButton: {
     backgroundColor: COLORS.primaryOrangeHex,
@@ -101,17 +107,22 @@ const styles = StyleSheet.create({
     marginTop: SPACING.space_10,
   },
   buttonText: {
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     textAlign: 'center',
     fontSize: FONTSIZE.size_16,
     fontWeight: '600',
   },
   registerText: {
-    color: COLORS.primaryLightGreyHex,
+    color: COLORS.primaryBlackHex,
     textAlign: 'center',
     marginTop: SPACING.space_20,
+  },
+  homeButton: {
+    backgroundColor: COLORS.primaryOrangeHex,
+    padding: SPACING.space_16,
+    borderRadius: SPACING.space_15,
+    marginTop: SPACING.space_10,
   }
 });
 
 export default LoginScreen;
-

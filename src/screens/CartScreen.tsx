@@ -105,7 +105,7 @@ const CartScreen = ({navigation, route}: any) => {
 const styles = StyleSheet.create({
   ScreenContainer: {
     flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryWhiteHex,
   },
   ScrollViewFlex: {
     flexGrow: 1,

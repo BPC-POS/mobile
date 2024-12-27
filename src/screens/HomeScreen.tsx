@@ -308,7 +308,7 @@ const HomeScreen = ({navigation}: any) => {
 const styles = StyleSheet.create({
   ScreenContainer: {
     flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryWhiteHex,
   },
   ScrollViewFlex: {
     flexGrow: 1,
@@ -316,7 +316,7 @@ const styles = StyleSheet.create({
   ScreenTitle: {
     fontSize: FONTSIZE.size_28,
     fontFamily: FONTFAMILY.poppins_semibold,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     paddingLeft: SPACING.space_30,
   },
   InputContainerComponent: {

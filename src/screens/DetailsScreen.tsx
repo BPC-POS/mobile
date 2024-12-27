@@ -169,7 +169,7 @@ const DetailsScreen = ({navigation, route}: any) => {
 const styles = StyleSheet.create({
   ScreenContainer: {
     flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryWhiteHex,
   },
   ScrollViewFlex: {
     flexGrow: 1,
@@ -181,14 +181,14 @@ const styles = StyleSheet.create({
   InfoTitle: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     marginBottom: SPACING.space_10,
   },
   DescriptionText: {
     letterSpacing: 0.5,
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_14,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     marginBottom: SPACING.space_30,
   },
   SizeOuterContainer: {
