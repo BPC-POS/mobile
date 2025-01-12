@@ -27,6 +27,7 @@ interface CartItemProps {
   type: string;
   incrementCartItemQuantityHandler: any;
   decrementCartItemQuantityHandler: any;
+  priceColor: string;
 }
 
 const CartItem: React.FC<CartItemProps> = ({

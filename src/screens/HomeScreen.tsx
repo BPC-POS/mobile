@@ -23,6 +23,7 @@ import CustomIcon from '../components/CustomIcon';
 import {FlatList} from 'react-native';
 import CoffeeCard from '../components/CoffeeCard';
 import {Dimensions} from 'react-native';
+import MenuButton from '../components/MenuButton';
 
 const getCategoriesFromData = (data: any) => {
   let temp: any = {};
@@ -301,6 +302,8 @@ const HomeScreen = ({navigation}: any) => {
           }}
         />
       </ScrollView>
+
+      <MenuButton navigation={navigation} />
     </View>
   );
 };

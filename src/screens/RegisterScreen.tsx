@@ -25,9 +25,9 @@ const RegisterScreen = ({ navigation }: any) => {
       
       <Text style={styles.label}>Username</Text>
       <TextInput
-        style={[styles.input, { color: COLORS.primaryWhiteHex }]}
+        style={styles.input}
         placeholder="Enter your username"
-        placeholderTextColor={COLORS.primaryLightGreyHex}
+        placeholderTextColor={COLORS.primaryWhiteHex}
         value={username}
         onChangeText={setUsername}
       />

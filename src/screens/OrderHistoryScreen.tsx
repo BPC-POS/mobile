@@ -20,6 +20,7 @@ import HeaderBar from '../components/HeaderBar';
 import EmptyListAnimation from '../components/EmptyListAnimation';
 import PopUpAnimation from '../components/PopUpAnimation';
 import OrderHistoryCard from '../components/OrderHistoryCard';
+import MenuButton from '../components/MenuButton';
 
 const OrderHistoryScreen = ({navigation}: any) => {
   const OrderHistoryList = useStore((state: any) => state.OrderHistoryList);
@@ -60,10 +61,7 @@ const OrderHistoryScreen = ({navigation}: any) => {
         <View
           style={[styles.ScrollViewInnerView, {marginBottom: tabBarHeight}]}>
           <View style={styles.ScreenContainer}>
-            <HeaderBar 
-              title="Lịch sử đơn hàng" 
-              style={{ color: 'black' }} 
-            />
+            <HeaderBar title="Lịch sử đơn hàng" />
             
 
             {OrderHistoryList.length == 0 ? (
@@ -95,6 +93,8 @@ const OrderHistoryScreen = ({navigation}: any) => {
           )}
         </View>
       </ScrollView>
+
+      <MenuButton navigation={navigation} />
     </View>
   );
 };
@@ -102,7 +102,7 @@ const OrderHistoryScreen = ({navigation}: any) => {
 const styles = StyleSheet.create({
   ScreenContainer: {
     flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryWhiteHex,
   },
   LottieAnimation: {
     height: 250,

@@ -13,6 +13,7 @@ import {COLORS, SPACING} from '../theme/theme';
 import HeaderBar from '../components/HeaderBar';
 import EmptyListAnimation from '../components/EmptyListAnimation';
 import FavoritesItemCard from '../components/FavoritesItemCard';
+import MenuButton from '../components/MenuButton';
 
 const FavoritesScreen = ({navigation}: any) => {
   const FavoritesList = useStore((state: any) => state.FavoritesList);
@@ -71,6 +72,8 @@ const FavoritesScreen = ({navigation}: any) => {
           </View>
         </View>
       </ScrollView>
+
+      <MenuButton navigation={navigation} />
     </View>
   );
 };
